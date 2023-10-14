@@ -5,3 +5,7 @@ export default function Home() {
         <div className="container pt-4">Hello</div>
     )
 }
+
+function CardStatsWrapper() {
+    
+}
