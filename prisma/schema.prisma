@@ -11,7 +11,7 @@ datasource db {
   directUrl = env("POSTGRES_URL_NON_POOLING") // uses a direct connection
 }
 
-model From {
+model Form {
   id          Int      @id @default(autoincrement())
   userId      String
   createAt    DateTime @default(now())
@@ -23,5 +23,15 @@ model From {
   visits      Int @default(0)
   submissions Int @default(0)
 
-  shareURL String @default(uuid())
+  shareURL        String            @default(uuid())
+  FormSubmissions FormSubmissions[]
+}
+
+model FormSubmissions {
+  id       Int      @id @default(autoincrement())
+  createAt DateTime @default(now())
+  formId   Int
+  form     Form     @relation(fields: [formId], references: [id])
+
+  content String
 }

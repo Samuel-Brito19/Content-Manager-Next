@@ -5,10 +5,10 @@ import ThemeSwitcher from '../components/ThemeSwitcher'
 
 function Layout({children}:{children:ReactNode}) {
   return (
-    <div className='flex flex-col min-h-screen min-w-full bg-backgroud max-h-screen'>{children}
-    <nav className='felx justify-between items-center border-b border-border h-[60px] px-4 py-2'>
+    <div className='flex flex-col min-h-screen min-w-full bg-background max-h-screen'>{children}
+    <nav className='flex justify-between items-center border-b border-border h-[60px] px-4 py-2'>
         <Logo/>
-        <div className='flez gap-4 items-center'>
+        <div className='flex gap-4 items-center'>
         <ThemeSwitcher/>
         <UserButton afterSignOutUrl='/sign-in' />
         </div>
